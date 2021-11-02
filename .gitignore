@@ -1,0 +1,8 @@
+data/*
+!data/.gitkeep 
+**/.ipynb_checkpoints/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 38909071cee3698c59fde1a5fe5df2ba0b7cf3ef
+.idea
