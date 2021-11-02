@@ -106,7 +106,7 @@ def before_request():
     app.jinja_env.cache = {}
 
 
-model = load_model('../models')
+model = load_model('./models')
 
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
