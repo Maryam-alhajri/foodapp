@@ -99,7 +99,7 @@ def static_file(path):
 
 @app.route('/')
 def home():
-    return render_template("./static/index.html")
+    return render_template('./static/index.html')
 
 
 def before_request():
