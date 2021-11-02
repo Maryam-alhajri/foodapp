@@ -94,12 +94,12 @@ def static_file(path):
     if ".js" in path or ".css" in path:
         return app.send_static_file(path)
     else:
-        return app.send_static_file('./static/index.html')
+        return app.send_static_file('index.html')
 
 
 @app.route('/')
 def root():
-    return app.send_static_file('./static/index.html')
+    return app.send_static_file('index.html')
 
 
 def before_request():
