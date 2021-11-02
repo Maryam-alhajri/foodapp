@@ -7,7 +7,7 @@ from io import BytesIO
 from typing import List, Dict, Union, ByteString, Any
 import os
 import flask
-from flask import Flask
+from flask import Flask, render_template, redirect, request, send_file , jsonify
 import requests
 import torch
 import json
@@ -98,8 +98,8 @@ def static_file(path):
 
 
 @app.route('/')
-def root():
-    return app.send_static_file('index.html')
+def home():
+    return render_template("index.html")
 
 
 def before_request():
@@ -109,10 +109,4 @@ def before_request():
 model = load_model('./models')
 
 if __name__ == '__main__':
-    port = os.environ.get('PORT', 5000)
-
-    if "prepare" not in sys.argv:
-        app.jinja_env.auto_reload = True
-        app.config['TEMPLATES_AUTO_RELOAD'] = True
-        app.run(debug=False, host='0.0.0.0', port=port)
-        # app.run(host='0.0.0.0', port=port)
+    app.run()
